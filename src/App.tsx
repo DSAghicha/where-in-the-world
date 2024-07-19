@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.sass";
 import Layout from "./layouts";
-import { Home } from "./pages";
+import { Country, Home } from "./pages";
 
 export default function App() {
     const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
@@ -24,6 +24,7 @@ export default function App() {
                         element={<Layout theme={theme} setTheme={setTheme} />}
                     >
                         <Route index element={<Home />} />
+                        <Route path=":country" element={<Country />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
