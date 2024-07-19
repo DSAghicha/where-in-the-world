@@ -1,0 +1,50 @@
+@use './_var' as *
+
+*,
+*::after,
+*::before
+    box-sizing: border-box
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+img
+    margin: 0
+
+html:focus-within
+    scroll-behavior: auto
+
+body
+    min-height: 100vh
+    line-height: calc(26 / 16)
+    text-rendering: optimizeSpeed
+    font: $font-w600 $font-s400 $font-family
+    font-optical-sizing: auto
+
+h1,
+h2,
+h3
+    font-weight: $font-w800
+
+a:not([class])
+    text-decoration-skip-ink: auto
+
+img
+    max-width: 100%
+    display: block
+
+@media (prefers-reduced-motion: reduce) 
+    html:focus-within 
+        scroll-behavior: auto
+    
+
+    *,
+    *::before,
+    *::after 
+        animation-duration: 0.01ms !important
+        animation-iteration-count: 1 !important
+        transition-duration: 0.01ms !important
+        scroll-behavior: auto !important
