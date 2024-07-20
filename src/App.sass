@@ -44,17 +44,91 @@
                 .details
                     padding: calc($spacing  / 2)
                     font-size: $font-s400
-    
+
+        .back-btn
+            margin-bottom: calc($spacing  * 2) 
+            padding: calc($spacing  / 2) $spacing
+            border-radius: calc($spacing  / 2)
+            cursor: pointer
+            font-weight: $font-w800
+            width: min-content
+            display: flex
+            gap: calc($spacing  / 2)
+            align-items: center
+
+        .cr
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-template-rows: 1fr
+            gap: 0 calc($spacing  * 2)
+
+            .details
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                grid-template-rows: 0.5fr min-content 0.5fr
+                gap: $spacing
+                grid-template-areas: "name name" "row1 row2" "borders borders"
+
+                h2
+                    grid-area: name
+                    margin: 0
+                    font-weight: $font-w800
+                
+                .row1
+                    grid-area: row1
+                    line-height: 2
+                
+                .row2
+                    grid-area: row2
+                    line-height: 2
+                
+                .borders
+                    grid-area: borders
+
+                    .borderCr
+                        display: flex
+                        gap: calc($spacing  / 2)
+                        flex-wrap: wrap
+
+                        span
+                            margin-top: $spacing
+                            padding: calc($spacing  / 2)
+                            border-radius: calc($spacing  / 2)
+                            font-weight: $font-w300
+                            font-size: $font-s300
+                            cursor: pointer
+
     &.light-theme
         background-color: $clr-pr-light
         color: $clr-text-light
 
-        .item
+        .bg-sec
             background-color: $clr-sec-light
 
     &.dark-theme
         background-color: $clr-pr-dark
         color: $clr-text-dark
-
-        .item
+        
+        .bg-sec
             background-color: $clr-sec-dark
+
+@media only screen and (max-width: 481px)
+    .App
+        font-size: $font-s300
+        .App-header
+            h1
+                font-size: $font-s400
+        main
+            padding: calc($spacing  * 2)
+
+            .items-cr
+                grid-template-columns: 1fr !important
+                gap: $spacing
+
+            .cr
+                grid-template-columns: 1fr !important
+                grid-template-rows: min-content 1fr
+                gap: calc($spacing  * 2)
+
+                .details
+                    grid-template-areas: "name" "row1" "row2" "borders"
