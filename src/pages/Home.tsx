@@ -1,15 +1,17 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import data from "../data/data.json";
 
 const Home = () => {
     const navigate = useNavigate();
+    const [countries, setCountries] = useState(data);
 
     return (
         <>
             <div className="items-cr">
-                {data.map((item, index) => (
+                {countries.map((item, index) => (
                     <div
-                        className="item"
+                        className="item bg-sec"
                         key={index}
                         onClick={() => navigate(`/${item.alpha3Code}`)}
                     >
