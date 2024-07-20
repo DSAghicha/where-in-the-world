@@ -19,6 +19,26 @@
     main
         padding: calc($spacing  * 2)
 
+        .search-cr
+            width: 100%
+            display: flex
+            justify-content: space-between
+            margin-bottom: calc($spacing  * 2)
+            
+            input
+                width: 50%
+                padding: calc($spacing  / 2) $spacing
+                border-radius: calc($spacing  / 2)
+                border: 1px solid $clr-sec-dark
+                outline: none
+            
+            select
+                padding: calc($spacing  / 2) $spacing
+                border-radius: calc($spacing  / 2)
+                border: 1px solid $clr-sec-dark
+                outline: none
+
+
         .items-cr
             display: grid
             grid-template-columns: repeat(4, 1fr)
@@ -102,13 +122,25 @@
         background-color: $clr-pr-light
         color: $clr-text-light
 
+        .search-cr input, select, option
+            background: $clr-sec-light
+            color: $clr-text-light
+            border-color: $clr-sec-light !important
+            box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12)
+
         .bg-sec
             background-color: $clr-sec-light
 
     &.dark-theme
         background-color: $clr-pr-dark
         color: $clr-text-dark
-        
+
+        .search-cr input, select, option
+            background: $clr-sec-dark
+            color: $clr-text-dark
+            border-color: $clr-sec-dark
+            box-shadow: none
+
         .bg-sec
             background-color: $clr-sec-dark
 
