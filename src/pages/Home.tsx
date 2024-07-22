@@ -12,7 +12,7 @@ const Home = () => {
                 <input
                     type="text"
                     placeholder="Search for a country..."
-                    aria-labelledby="Search for a country"
+                    aria-label="Search for a country"
                     onChange={(e) => {
                         const value = e.target.value;
                         const results = data.filter((country) =>
@@ -24,7 +24,7 @@ const Home = () => {
                     }}
                 />
                 <select
-                    aria-labelledby="Filter by Region"
+                    aria-label="Filter by Region"
                     onChange={(e) => {
                         const value = e.target.value;
                         const results = data.filter((country) =>
